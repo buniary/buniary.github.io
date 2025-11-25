@@ -32,14 +32,12 @@ bttBtn.addEventListener('click', (e) => {
 
 //horizontal 활용
 const slideWrapper = document.querySelector('.testimonial');
-const slideContainer = slideWrapper.querySelector('ul');
+const slideContainer = document.querySelector('ul');
 const slides = slideContainer.querySelectorAll('li');
 
-const prevBtn = slideWrapper.querySelector('.prev');
-const nextBtn = slideWrapper.querySelector('.next');
-
-
-
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+ 
 let currentIdx = 0;
 function moveSlide(idx) {
   //전체 컨테이너에서 slides의 넓이 100% 만큼 이동
@@ -65,15 +63,28 @@ const answer = document.querySelectorAll('.answer');
 
 //question 클릭하면 question 클래스에 active 추가
 
-quest.forEach((item) => {
-  item.addEventListener('click', () => {
-    for (let q of quest) {
-      q.classList.remove('active');
+for(let q of quest) {
+  // quest 클릭 이벤트
+  q.addEventListener('click', ()=>{
+    // quest에 active가 있으면 제거
+    for (let qd of quest){
+      qd.classList.remove('active');
+      //선택한 quest에 active가 없는 바로 다음 답변
+      let answerHide = qd.nextElementSibling;
+      //없는 바로다음 답변은 숨기기
+      if (answerHide) {
+        answerHide.classList.remove('active')
+      }
     }
-    item.classList.add('active');
-
+    // quest에 active 추가
+    q.classList.add('active');
+    // active가 추가된 답변
+    let crtAnswer = q.nextElementSibling;
+    //active가 추가됐으면 답변에도 active추가
+    if(crtAnswer) {
+      crtAnswer.classList.add('active')
+    }
   });
-})
+}
 
-//question에 active 된 곳에 answer도 active
 
