@@ -32,8 +32,8 @@ bttBtn.addEventListener('click', (e) => {
 
 //horizontal 활용
 const slideWrapper = document.querySelector('.testimonial');
-const slideContainer = slideWrapper.querySelector('ul');
-const slides = slideContainer.querySelectorAll('li');
+const slideContainer = document.querySelector('.testimonial ul');
+const slides = document.querySelectorAll('.testimonial li');
 
 const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
