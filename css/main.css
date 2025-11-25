@@ -78,9 +78,25 @@ nav li:first-child span{
     margin:27px 0;
 }
 .testimonial{
+    width: 100%;
     position: relative;
+    overflow: hidden;
 }
-.testimonial blockquote{
+.testimonial ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+    left: 0;
+    transition: left 0.5s;
+}
+.testimonial ul li {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.testimonial blockquote {
     width: 730px;
     margin:0 auto;
     font-style: italic;
@@ -268,18 +284,21 @@ form input[type="submit"]{
 }
 .answer{
     padding: 20px 20px 60px;
-    display:none;    
+    display:none;
 }
 .question.active{
     font-weight: bold;
 }
-.question.active + .answer{
-    display:block;
-}
+
 .question.active i{
     transform:rotate(180deg) translateY(calc(50% - 4px)) ;   
-    color:#2c2c2c;
+    color:
+    #2c2c2c;
 }
+.answer.active {
+    display: block;
+}
+
 .portfolio-slides {
     width: 750px;
     margin:0 auto;
@@ -309,6 +328,7 @@ form input[type="submit"]{
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: opacity 0.5s;
     opacity: 0;
     visibility: hidden;
 }
