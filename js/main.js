@@ -63,6 +63,20 @@ const answer = document.querySelectorAll('.answer');
 
 //question 클릭하면 question 클래스에 active 추가
 
+
+//CSS 변경하여 quest에 active 클래스가 있을 때 바로 다음오는 answer display로 block함
+/*
+for (let q of quest) {
+  q.addEventListener('click', ()=> {
+    for(let qc of quest) {
+      qc.classList.remove('active');
+    }
+    q.classList.add('active');
+  });
+}
+  */
+
+
 for(let q of quest) {
   // quest 클릭 이벤트
   q.addEventListener('click', ()=>{
@@ -86,5 +100,6 @@ for(let q of quest) {
     }
   });
 }
+
 
 

@@ -295,7 +295,7 @@ form input[type="submit"]{
     color:
     #2c2c2c;
 }
-.answer.active {
+.question.active + .answer {
     display: block;
 }
 
